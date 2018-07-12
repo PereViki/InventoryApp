@@ -65,9 +65,18 @@
     <!-- Toast message in editor when new pet has failed to be inserted [CHAR LIMIT=NONE] -->
     <string name="editor_insert_product_failed">Error with saving product</string>
 
+    <!-- Toast message in editor when current pet was successfully updated [CHAR LIMIT=NONE] -->
+    <string name="editor_update_product_successful">Product updated</string>
+
+    <!-- Toast message in editor when current pet has failed to be updated [CHAR LIMIT=NONE] -->
+    <string name="editor_update_product_failed">Error with updating product</string>
+
     <!-- Title text for the empty view [CHAR LIMIT=50] -->
     <string name="empty_view_title_text">It\'s a bit lonely here...</string>
 
     <!-- Subtitle text for the empty view that prompts the user to add a product [CHAR LIMIT=50] -->
     <string name="empty_view_subtitle_text">Get started by adding a product</string>
+
+    <!-- Title for the activity to edit an existing product [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_edit_product">Edit Product</string>
 </resources>

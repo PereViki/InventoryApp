@@ -130,8 +130,8 @@ public class CatalogActivity extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put(ProductEntry.COLUMN_PRODUCT_NAME, "iPhone X");
         values.put(ProductEntry.COLUMN_PRODUCT_CATEGORY, ProductEntry.CATEGORY_1);
-        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, "999");
-        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, "25");
+        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, 999);
+        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, 25);
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER, "Apple");
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_PHONE, "1‑800‑MY‑APPLE");
 

@@ -145,8 +145,8 @@ public class CatalogActivity extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put(ProductEntry.COLUMN_PRODUCT_NAME, "iPhone X");
         values.put(ProductEntry.COLUMN_PRODUCT_CATEGORY, ProductEntry.CATEGORY_1);
-        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, "999");
-        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, "25");
+        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, 999);
+        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, 25);
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER, "Apple");
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_PHONE, "1‑800‑MY‑APPLE");
 
@@ -159,7 +159,7 @@ public class CatalogActivity extends AppCompatActivity {
         // this is set to "null", then the framework will not insert a row when
         // there are no values).
         // The third argument is the ContentValues object containing the info for the dummy product.
-        long newRowId = db.insert(ProductEntry.TABLE_NAME, null, values);
+        db.insert(ProductEntry.TABLE_NAME, null, values);
     }
 
     @Override

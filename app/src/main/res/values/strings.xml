@@ -58,4 +58,10 @@
 
     <!-- Label for dropdown menu option if the product category is 1e [CHAR LIMIT=20] -->
     <string name="category_2">Category 2</string>
+
+    <!-- Toast message in editor when new pet has been successfully inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_product_successful">Product saved</string>
+
+    <!-- Toast message in editor when new pet has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_product_failed">Error with saving product</string>
 </resources>

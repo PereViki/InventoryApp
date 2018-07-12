@@ -1,8 +1,11 @@
 package com.example.android.inventoryapp1;
+
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -19,9 +22,6 @@ import com.example.android.inventoryapp1.data.ProductDbHelper;
  */
 public class CatalogActivity extends AppCompatActivity {
 
-    /** Database helper that will provide us access to the database */
-    private ProductDbHelper mDbHelper;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +36,6 @@ public class CatalogActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        // To access our database, we instantiate our subclass of SQLiteOpenHelper
-        // and pass the context, which is the current activity.
-        mDbHelper = new ProductDbHelper(this);
     }
 
     @Override
@@ -53,8 +49,6 @@ public class CatalogActivity extends AppCompatActivity {
      * the products database.
      */
     private void displayDatabaseInfo() {
-        // Create and/or open a database to read from it
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
         // Define a projection that specifies which columns from the database
         // you will actually use after this query.
@@ -68,14 +62,7 @@ public class CatalogActivity extends AppCompatActivity {
                 ProductEntry.COLUMN_PRODUCT_SUPPLIER_PHONE };
 
         // Perform a query on the products table
-        Cursor cursor = db.query(
-                ProductEntry.TABLE_NAME,   // The table to query
-                projection,            // The columns to return
-                null,         // The columns for the WHERE clause
-                null,           // The values for the WHERE clause
-                null,                  // Don't group the rows
-                null,                  // Don't filter by row groups
-                null);                   // The sort order
+        Cursor cursor = getContentResolver().query(ProductEntry.CONTENT_URI, projection, null, null, null);
 
         TextView displayView = (TextView) findViewById(R.id.text_view_product);
 
@@ -137,29 +124,22 @@ public class CatalogActivity extends AppCompatActivity {
      * Helper method to insert hardcoded product data into the database. For debugging purposes only.
      */
     private void insertProduct() {
-        // Gets the database in write mode
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         // Create a ContentValues object where column names are the keys,
         // and iPhone X's product attributes are the values.
         ContentValues values = new ContentValues();
         values.put(ProductEntry.COLUMN_PRODUCT_NAME, "iPhone X");
         values.put(ProductEntry.COLUMN_PRODUCT_CATEGORY, ProductEntry.CATEGORY_1);
-        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, "999");
-        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, "25");
+        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, 999);
+        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, 25);
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER, "Apple");
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_PHONE, "1‑800‑MY‑APPLE");
 
-
-
-        // Insert a new row for the dummy product in the database, returning the ID of that new row.
-        // The first argument for db.insert() is the products table name.
-        // The second argument provides the name of a column in which the framework
-        // can insert NULL in the event that the ContentValues is empty (if
-        // this is set to "null", then the framework will not insert a row when
-        // there are no values).
-        // The third argument is the ContentValues object containing the info for the dummy product.
-        long newRowId = db.insert(ProductEntry.TABLE_NAME, null, values);
+        // Insert a new row for the dummy product into the provider using the ContentResolver.
+        // Use the {@link ProductEntry#CONTENT_URI} to indicate that we want to insert
+        // into the products database table.
+        // Receive the new content URI that will allow us to access the dummy product's data in the future.
+        Uri newUri = getContentResolver().insert(ProductEntry.CONTENT_URI, values);
     }
 
     @Override

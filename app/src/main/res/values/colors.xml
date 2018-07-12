@@ -14,4 +14,10 @@
 
     <!-- Primary dark color for the editor -->
     <color name="editorColorPrimaryDark">#394450</color>
+
+    <!-- Primary dark color for the list -->
+    <color name="listColorPrimaryDark">#2B3D4D</color>
+
+    <!-- Primary light color for the list -->
+    <color name="listColorPrimaryLight">#AEB6BD</color>
 </resources>

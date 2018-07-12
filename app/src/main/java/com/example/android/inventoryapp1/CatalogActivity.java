@@ -150,8 +150,6 @@ public class CatalogActivity extends AppCompatActivity {
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER, "Apple");
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_PHONE, "1‑800‑MY‑APPLE");
 
-
-
         // Insert a new row for the dummy product in the database, returning the ID of that new row.
         // The first argument for db.insert() is the products table name.
         // The second argument provides the name of a column in which the framework

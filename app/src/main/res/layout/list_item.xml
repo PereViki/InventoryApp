@@ -3,24 +3,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="@dimen/activity_margin">
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="@color/listColorPrimaryDark"
-        tools:text="@string/hint_product_name" />
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/summary"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/listColorPrimaryDark"
+            tools:text="@string/hint_product_name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:textAppearance="?android:textAppearanceSmall"
-        android:textColor="@color/listColorPrimaryLight"
-        tools:text="@string/hint_product_name" />
+        android:layout_weight="1"
+        android:gravity="right"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/unit_product_price"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/listColorPrimaryDark"
+                tools:text="@string/unit_product_price" />
+
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/listColorPrimaryDark"
+                tools:text="@string/hint_product_price" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingRight="@dimen/activity_margin"
+                android:text="@string/label_quantity"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/listColorPrimaryLight"
+                tools:text="@string/label_quantity" />
+
+            <TextView
+                android:id="@+id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/listColorPrimaryLight"
+                tools:text="@string/hint_product_quantity" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/sale_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/editorColorPrimary"
+            android:padding="@dimen/btn_padding"
+            android:text="@string/sale_btn"
+            android:textColor="@color/listColorPrimaryLight" />
+
+    </LinearLayout>
 </LinearLayout>

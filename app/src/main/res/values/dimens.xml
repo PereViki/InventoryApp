@@ -5,4 +5,11 @@
 
     <!-- Common margin value used throughout the app -->
     <dimen name="activity_margin">16dp</dimen>
+
+    <!-- Common margin value used for button padding -->
+    <dimen name="btn_padding">8dp</dimen>
+
+    <!-- zero for weight -->
+    <dimen name="zero">0dp</dimen>
+
 </resources>

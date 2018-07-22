@@ -9,6 +9,12 @@
     <!-- Common margin value used for button padding -->
     <dimen name="btn_padding">8dp</dimen>
 
+    <!-- +/- button size -->
+    <dimen name="btn_size">36dp</dimen>
+
+    <!-- +/- button text size -->
+    <dimen name="btn_text_size">25sp</dimen>
+
     <!-- zero for weight -->
     <dimen name="zero">0dp</dimen>
 

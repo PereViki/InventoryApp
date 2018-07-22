@@ -94,7 +94,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
     private void insertProduct() {
 
         // Create a ContentValues object where column names are the keys,
-        // and iPhone X's product attributes are the values.
+        // and a generic product's attributes are the values.
         ContentValues values = new ContentValues();
         values.put(ProductEntry.COLUMN_PRODUCT_NAME, "To be edited...");
         values.put(ProductEntry.COLUMN_PRODUCT_CATEGORY, ProductEntry.CATEGORY_1);
